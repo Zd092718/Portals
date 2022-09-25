@@ -14,7 +14,6 @@ public class Door : TriggerableObject
     {
         targetPosition = Vector3.zero;
 
-        OnTrigger();
     }
 
     // Update is called once per frame
