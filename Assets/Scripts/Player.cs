@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float grabDistance = 3f;
-    [SerializeField] private float throwingForce = 300f;
+    public float grabDistance = 3f;
+    public float throwingForce = 300f;
+
+    public Action onCollectOrb;
+
     private GrabbableObject grabbableObject;
     private Camera playerCamera;
 
@@ -70,5 +73,16 @@ public class Player : MonoBehaviour
         grabbableObject.GetComponent<Rigidbody>().useGravity = true;
         grabbableObject.GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * throwingForce);
         grabbableObject = null;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Orb>() != null)
+        {
+            if (onCollectOrb != null)
+            {
+                onCollectOrb();
+            }
+        }
     }
 }
