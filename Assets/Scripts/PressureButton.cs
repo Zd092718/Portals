@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class PressureButton : MonoBehaviour
 {
-    [SerializeField] TriggerableObject targetObject;
-    [SerializeField] GameObject model;
-    [SerializeField] float pressedHeight;
-    [SerializeField] float pressedDuration = 1f;
-    [SerializeField] float pressedSpeed = 2f;
+    public TriggerableObject targetObject;
+    public GameObject model;
+    public float pressedHeight;
+    public float pressedDuration = 1f;
+    public float pressedSpeed = 2f;
 
 
     Vector3 targetPosition;

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Door : TriggerableObject
 {
-    [SerializeField] GameObject model;
-    [SerializeField] float speed = 3f;
-    [SerializeField] float openedHeight;
+    public GameObject model;
+    public float speed = 3f;
+    public float openedHeight;
 
     Vector3 targetPosition;
     // Start is called before the first frame update
